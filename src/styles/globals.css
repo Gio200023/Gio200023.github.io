@@ -94,7 +94,7 @@ main {
 	flex-direction: column;
 	gap: 1rem;
 	padding: 1rem;
-	border: 1px solid transparent;
+	border: 1px solid #353535;
 	color: #ffffff;
 	text-decoration: none;
 	transition:
@@ -105,7 +105,7 @@ main {
 .post-container:hover,
 .post-container:focus-visible {
 	background-color: rgba(var(--primary-rgb), 0.125);
-	border: 1px solid var(--primary);
+	border: 1px solid transparent;
 	color: white;
 	text-decoration: none;
 }
