@@ -1,0 +1,20 @@
+---
+title: Runtime-Adaptive Distributed CNN Inference at the Edge
+date: 01-01-2026
+description: MSc thesis - splitting a large neural network's inference workload across multiple edge devices over OpenMPI, with runtime-adaptive rebalancing.
+# TODO: swap in a real diagram/screenshot, ~1200x675px (16:9) works well, same field name
+image: ../assets/spectre.png
+info: []
+---
+
+Master's thesis project (Leiden University, 2026): a dynamic distributed inference system that splits a large neural network's workload across multiple devices on the same network.
+
+## What it does
+
+- Distributes inference of a large CNN across several devices coordinated by a main "manager" node over **OpenMPI**.
+- Adapts the workload split at runtime as device availability on the network changes — nodes can join or drop without restarting the pipeline.
+- Automatically tailors each device's environment to the job, including installing and configuring **CUDA** where available to speed up computation.
+
+## Why it matters
+
+Most distributed inference setups assume a fixed, known set of devices. This project targets the messier reality of edge deployments: devices that come and go, with wildly different compute budgets, that still need to cooperate on one inference task.

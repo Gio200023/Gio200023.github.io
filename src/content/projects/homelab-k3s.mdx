@@ -1,0 +1,20 @@
+---
+title: Multi-Country k3s Homelab Cluster
+date: 01-01-2025
+description: A k3s cluster with worker nodes spread across different countries, tying my homelab and remote hardware into one control plane.
+# TODO: swap in a real diagram/screenshot, ~1200x675px (16:9) works well, same field name
+image: ../assets/spectre.png
+info: []
+---
+
+Started in 2025, ongoing: a **k3s** (lightweight Kubernetes) cluster with nodes that aren't all in the same building — let alone the same country.
+
+## What it does
+
+- Joins homelab hardware in different physical locations into a single k3s control plane.
+- Deals with the actual hard part of "distributed" homelabs: unreliable cross-country links, NAT traversal and keeping nodes healthy when the network between them isn't.
+- Used as a sandbox for the same cluster-management thinking I apply professionally to HPC infrastructure — just scaled down and, admittedly, held together with more optimism.
+
+## Why it matters
+
+It's one thing to run Kubernetes on a LAN. Making it behave sanely across borders and residential internet connections is a much better teacher than any tutorial.

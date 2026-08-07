@@ -1,0 +1,21 @@
+---
+title: Continual Learning on the MAX78000
+date: 07-01-2022
+description: BSc thesis - real-time continual learning on a microcontroller's CNN accelerator, teaching it a new digit class in milliseconds.
+# TODO: swap in a real diagram/screenshot, ~1200x675px (16:9) works well, same field name
+image: ../assets/spectre.png
+info: []
+---
+
+Bachelor's thesis project (University of Trento, 2022): applying continual learning to a microcontroller — the Maxim Integrated **MAX78000**, which ships with an on-chip CNN accelerator.
+
+## What it does
+
+- A C++/Python program that runs a neural network on the MAX78000 to recognise MNIST digits (0-9).
+- Uses the chip's CNN accelerator for real-time, on-device learning rather than pure inference.
+- Teaches the network a brand-new class (the letter "A") in under a few milliseconds, reaching 97% accuracy.
+- Logs power draw during learning and visualises it with NumPy, pandas and Matplotlib.
+
+## Why it matters
+
+Continual learning on full-size GPUs is one thing; doing it on a microcontroller with kilobytes of memory, in real time, is a much harder constraint-fitting exercise — and a good preview of what edge-AI hardware can actually do today.

@@ -1,0 +1,23 @@
+[
+	{
+		"id": 1,
+		"duration": "Sept 2022 - July 2023",
+		"company": "Arcoda",
+		"title": "Software Engineer",
+		"description": "Backend development in C# on .NET, PostgreSQL, Docker and Kubernetes (via Rancher), GitLab CI/CD pipelines. Trento, Italy."
+	},
+	{
+		"id": 2,
+		"duration": "Sept 2024 - Feb 2025",
+		"company": "Leiden University",
+		"title": "Teaching Assistant - Deep Learning",
+		"description": "Ran lab sessions on neural networks with PyTorch/TensorFlow, one-on-one student support and assignment guidance."
+	},
+	{
+		"id": 3,
+		"duration": "Oct 2025 - Present",
+		"company": "ClusterVision B.V.",
+		"title": "HPC SRE / AI Developer",
+		"description": "Porting and maintaining TrinityX for RHEL/Rocky 10, building the TrinityX Airgap offline-deployment pipeline, low-level cluster boot/monitoring tooling (BMC, IPMI, Redfish, SOL), and MILA, an AI-assisted Linux admin tool."
+	}
+]

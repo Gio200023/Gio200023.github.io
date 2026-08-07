@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"icon": {
+			"type": "lucide",
+			"name": "map-pin"
+		},
+		"text": "Based in Leiden, NL"
+	},
+	{
+		"id": 2,
+		"icon": {
+			"type": "lucide",
+			"name": "server"
+		},
+		"text": "HPC Engineer @ ClusterVision"
+	},
+	{
+		"id": 3,
+		"icon": {
+			"type": "lucide",
+			"name": "graduation-cap"
+		},
+		"text": "MSc Computer Science, Leiden University"
+	}
+]
