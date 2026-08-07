@@ -1,20 +1,42 @@
 ---
-title: Multi-Country k3s Homelab Cluster
+title: k3s Homelab Cluster (Multi-Country, In Progress)
 date: 01-01-2025
-description: A k3s cluster with worker nodes spread across different countries, tying my homelab and remote hardware into one control plane.
-# TODO: swap in a real diagram/screenshot, ~1200x675px (16:9) works well, same field name
+description: A k3s cluster wired for Tailscale-networked nodes across countries. One node live today, a second one built and waiting to join.
+# TODO: once the second node is actually joined, swap this for a `kubectl get nodes -o wide`
+# screenshot showing both countries, ~1200x675px works well, same field name
 image: ../assets/spectre.png
 info: []
 ---
 
-Started in 2025, ongoing: a **k3s** (lightweight Kubernetes) cluster with nodes that aren't all in the same building — let alone the same country.
+Started in 2025: a **k3s** (lightweight Kubernetes) cluster, built from the start to run over **Tailscale** so nodes don't need to be on the same LAN — or the same country — to join the same control plane.
 
-## What it does
+## Where it actually stands
 
-- Joins homelab hardware in different physical locations into a single k3s control plane.
-- Deals with the actual hard part of "distributed" homelabs: unreliable cross-country links, NAT traversal and keeping nodes healthy when the network between them isn't.
-- Used as a sandbox for the same cluster-management thinking I apply professionally to HPC infrastructure — just scaled down and, admittedly, held together with more optimism.
+Honest status, not the highlight reel: right now it's one control-plane node, `aifactory`, running the real workload. The second, out-of-country node is built and ready — just not racked and joined yet. Here's what's actually live:
+
+```
+$ kubectl get nodes -o wide
+NAME        STATUS   ROLES           AGE   VERSION        INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION                 CONTAINER-RUNTIME
+aifactory   Ready    control-plane   25h   v1.36.3+k3s1   192.168.2.21   <none>        Debian GNU/Linux 13 (trixie)   6.12.100+deb13-amd64 (amd64)   containerd://2.3.2-k3s2
+
+$ kubectl get pods
+NAME                         READY   STATUS    RESTARTS   AGE
+uptime-kuma-f7596df7-5k9tr   1/1     Running   0          20h
+
+$ kubectl get pods -n tailscale
+NAME                        READY   STATUS    RESTARTS   AGE
+operator-6d68c948f4-cw6f7   1/1     Running   0          20h
+ts-uptime-kuma-rmn59-0      1/1     Running   0          20h
+```
+
+The Tailscale operator is already deployed and exposing `uptime-kuma` through it — that's the plumbing the second node will join through once it's up.
+
+## What it does (once node two is in)
+
+- Joins homelab hardware in different physical locations into a single k3s control plane over Tailscale, no port-forwarding or NAT hacks required.
+- Deals with the actual hard part of "distributed" homelabs: unreliable cross-country links and keeping nodes healthy when the network between them isn't.
+- A sandbox for the same cluster-management thinking I apply professionally to HPC infrastructure — just scaled down and held together with more optimism.
 
 ## Why it matters
 
-It's one thing to run Kubernetes on a LAN. Making it behave sanely across borders and residential internet connections is a much better teacher than any tutorial.
+It's one thing to run Kubernetes on a LAN. Making it behave sanely across borders and residential internet connections is a much better teacher than any tutorial — this page will get the two-node screenshot the moment that's true.

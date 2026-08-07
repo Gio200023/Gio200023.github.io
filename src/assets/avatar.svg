@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512"
+     role="img" aria-label="Neon avatar: curly hair, dark rectangular glasses, beard, smile">
+  <title>Neon avatar</title>
+  <defs>
+    <filter id="glow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="2.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <g id="art" fill="none" stroke="#8C5CF5" stroke-width="4.0"
+       stroke-linecap="round" stroke-linejoin="round">
+      <path d="M25.00 49.00 A7.57 7.57 0 0 1 26.69 35.55 A6.92 6.92 0 0 1 33.44 24.76 A6.49 6.49 0 0 1 44.00 18.78 A6.38 6.38 0 0 1 56.00 18.78 A6.49 6.49 0 0 1 66.56 24.76 A6.92 6.92 0 0 1 73.31 35.55 A7.57 7.57 0 0 1 75.00 49.00 A25.94 25.94 0 0 1 66.68 70.92 A17.5 17.5 0 0 1 50.00 80.00 A17.5 17.5 0 0 1 33.32 70.92 A25.94 25.94 0 0 1 25.00 49.00 Z"/>
+      <path d="M28.64 40.00 A9.95 9.95 0 0 1 42.88 39.00 A9.95 9.95 0 0 1 57.12 39.00 A9.95 9.95 0 0 1 71.36 39.00"/>
+      <path d="M47.0 53.0 H53.0" stroke-width="2.4"/>
+      <path d="M42.5 65 A9.5 9.5 0 0 0 57.5 65"/>
+    </g>
+    <g id="lenses" fill="#8C5CF5"><rect x="33.5" y="48.5" width="13.5" height="9.0" rx="2"/><rect x="53.0" y="48.5" width="13.5" height="9.0" rx="2"/></g>
+  </defs>
+  <g filter="url(#glow)">
+    <use href="#art"/><use href="#lenses"/>
+  </g>
+</svg>
